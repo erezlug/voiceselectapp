@@ -1,4 +1,3 @@
-var commands = [ "Everything is working", "Nothing is working", "Just the audio works", "Just the video works"
-, "כלום לא עובד", "רק הוידאו עובד", "רק השמע עובד",   "הכל עובד"];
+var commands = [ "Activate Gaurdian", "Save me", "Help Me", "SOS" , "הצילו", "חוטפים אותי", "מצב חירום",   "זקוק לחילוץ"];
 
 export default commands;
