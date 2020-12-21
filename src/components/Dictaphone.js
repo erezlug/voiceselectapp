@@ -85,13 +85,13 @@ const Dictaphone = ({ sendAns, voiceCommands }) => {
         <div className="col-4"></div>
         <div className="trans col-4">
           <span>language: {language}</span>
-          <div className="row">
+          {/* <div className="row">
             <div className="col-2"></div>
             <div className="col-8">
               <span>{transcript}</span>
             </div>
             <div className="col-2"></div>
-          </div>
+          </div> */}
         </div>
         <div className="col-4"></div>
       </div>
