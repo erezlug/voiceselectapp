@@ -27,18 +27,20 @@ const Dictaphone = ({ sendAns, voiceCommands }) => {
   }
   //voice commands command can be a string to regonize or an array of strings to recognize
   const commands = [
-    {
-      command: ['clear', 'נקי'],
-      callback: ({ resetTranscript }) => resetTranscript(),
-      matchInterim: true
-    },
+    // {
+    //   command: ['clear', 'נקי'],
+    //   callback: ({ resetTranscript }) => resetTranscript(),
+    //   matchInterim: true
+    // },
 
     {
       command: [...voiceCommands],
       callback: (command) => videoCommandCallback(command),
       isFuzzyMatch: true,
-      fuzzyMatchingThreshold: 0.6,
-      bestMatchOnly: true
+      fuzzyMatchingThreshold: 0.5,
+      bestMatchOnly: true,
+      //This is important to make sure the command activates in continuous mode
+      matchInterim: (continuous? true:false)
     }
   ]
 
@@ -55,7 +57,8 @@ const Dictaphone = ({ sendAns, voiceCommands }) => {
   else {
     if(continuous!==false){
       SpeechRecognition.startListening({
-        language: language
+        language: language,
+        continuous:true
       });
     }
   }
@@ -73,7 +76,7 @@ const Dictaphone = ({ sendAns, voiceCommands }) => {
         </div>
         <div className="col-4"></div>
       </div>
-      <button onClick={resetTranscript}>Reset</button>
+      {/* <button onClick={resetTranscript}>Reset</button> */}
       <div className="row justify-content-center">
         {continuous?null:<button onClick={listening? SpeechRecognition.stopListening:handleStart}>{listening? "Stop":"Start" } Dic</button>}
 
@@ -85,13 +88,13 @@ const Dictaphone = ({ sendAns, voiceCommands }) => {
         <div className="col-4"></div>
         <div className="trans col-4">
           <span>language: {language}</span>
-          {/* <div className="row">
+          <div className="row hide">
             <div className="col-2"></div>
             <div className="col-8">
               <span>{transcript}</span>
             </div>
             <div className="col-2"></div>
-          </div> */}
+          </div>
         </div>
         <div className="col-4"></div>
       </div>
