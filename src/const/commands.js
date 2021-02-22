@@ -1,3 +1,3 @@
-var commands = [ "Activate Traffilog", "Save me", "Help Me", "Traffi Traffi" , "הצילו", "טרפי טרפי", "טרפילוג",   "זקוק לחילוץ"];
+var commands = [ "Activate", "Save me", "Help Me", "Stop" , "הצילו", "טרפי טרפי", "פרח אדום",   "זקוק לחילוץ"];
 
 export default commands;
