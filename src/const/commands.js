@@ -1,3 +1,3 @@
-var commands = [ "Activate", "Save me", "Help Me", "Stop" , "הצילו", "טרפי טרפי", "אורלי",   "זקוק לחילוץ"];
+var commands = [ "Activate", "Save me", "Help Me", "mom" , "הצילו", "טרפי טרפי", "אמא",   "זקוק לחילוץ"];
 
 export default commands;
